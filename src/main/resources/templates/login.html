@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log File Analyser - Login</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(to right, #FFD700, #FF6347);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #581845;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            position: fixed;
+            top: 0;
+            left: 160px;
+            width: calc(100% - 160px);
+            z-index: 500;
+            box-sizing: border-box;
+        }
+
+        .sidebar {
+            margin: 0;
+            padding: 10px;
+            width: 160px;
+            background: linear-gradient(to right, #FFD700, #FF6347);
+            position: fixed;
+            height: 100%;
+            overflow: auto;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background-color: #004d40;
+        }
+
+        .content {
+            margin-left: 160px;
+            padding: 20px;
+            padding-top: 80px; /* Increased padding to lower content */
+            text-align: center;
+        }
+
+        .login-form {
+            margin-top: 20px;
+            background: #ffffff;
+            padding: 30px; /* Increased padding for more space */
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: left;
+            width: 400px; /* Set a fixed width for the form */
+        }
+
+        .login-form label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .login-form input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .login-form button {
+            padding: 10px;
+            color: #ffffff;
+            background-color: #00796b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .login-form button:hover {
+            background-color: #004d40;
+        }
+
+        @media screen and (max-width: 500px) {
+            .header {
+                width: 100%;
+                left: 0;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 50px 5px;
+            }
+
+            .content {
+                margin-left: 0;
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Log File Analyser</div>
+    
+    <div class="sidebar">
+        <h2><a href="/webpage" class="active">File Upload</a></h2>
+        <h2><a href="#settings">Settings</a></h2>
+    </div>
+
+    <div class="content">
+        <form class="login-form" id="loginForm" action="/login" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
